@@ -1,0 +1,39 @@
+od.go
+
+This is a simple calculator for determining the appropriate optical
+density of laser protective eyewear based on a laser's beam diameter
+and power output. It assumes the laser is a continuous wave diode
+laser with an output in the visible spectrum (i.e. from the standard
+445nm blue diode lasers to the 808nm red diode lasers). It is based
+on the European EN207 standard for laser safety eyewear. This
+standard is more strict than the U.S. ANSI Z 136 standard and
+dictates an optical density that will withstand a 10s emission from
+a CW laser. Users are strongly encouraged to familiarise themselves
+with standard laser safety precautions, particularly when working
+with class 3+ lasers. Please note that higher-power lasers are *not*
+a toy, and proper safety precautions must be taken when operating
+them.
+
+
+USAGE
+-----
+
+od [-d beam diameter in mm] [-p beam power in W]
+
+The defaults are a 9mm beam diamter (common in small lasers) and
+1W output. This is much higher than consumer laser pointers (and
+falls into the category of class 4 laser assuming a CW diode laser
+in the visible spectrum).
+
+Example:
+	6mm beam diameter at 250mW:
+	od -d 6 -p 0.25
+
+	9mm beam diameter at 3W:
+	od -p 3
+
+LICENSE
+-------
+
+This software is released under the ISC license. The full license
+is contained in the LICENSE file.
